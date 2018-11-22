@@ -6,15 +6,13 @@ public class Utilities {
     // Returns a char array containing every nth char. When
     // sourceArray.length < n, returns sourceArray
     public char[] everyNthChar(char[] sourceArray, int n) {
-
         if(sourceArray == null || sourceArray.length < n) {
             return sourceArray;
         }
 
-        int returnedLength = sourceArray.length / n;
-        char[] result = new char[returnedLength];
-        int index = 0;
+        char[] result = new char[sourceArray.length / n];
 
+        int index = 0;
         for(int i = n-1; i < sourceArray.length; i += n) {
             result[index++] = sourceArray[i];
         }
@@ -28,7 +26,6 @@ public class Utilities {
     // "ABCBDEEF" -> "ABCBDEF" (the two B's aren't next to each other, so they
     // aren't removed.
     public String removePairs(String source) {
-
         // If length is less than  2, there won't be any pairs
         if (source == null || source.length() <2) {
             return source;
@@ -43,11 +40,10 @@ public class Utilities {
                 sb.append(string[i]);
             }
         }
-
         //System.out.println(string[string.length -1]);
         // Add the final character, which is always safe
         sb.append(string[string.length - 1]);
-
+        
         return sb.toString();
     }
 
